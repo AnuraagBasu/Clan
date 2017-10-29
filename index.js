@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import App from './app/native';
 
-AppRegistry.registerComponent('Clan', () => App);
+AppRegistry.registerComponent( 'Clan', () => App );
