@@ -17,9 +17,6 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 		alignItems: 'flex-start',
 		justifyContent: 'center'
 	},
-	radioLabel: {
-		fontSize: 14
-	},
 	radioLabelSelected: {
 		fontWeight: 'bold'
 	},

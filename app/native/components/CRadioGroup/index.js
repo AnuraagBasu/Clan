@@ -14,7 +14,7 @@ export default class CRadioGroup extends Component {
 		let radioButtons = this.props.options.map( ( option, index ) => {
 			let outerCircleStyles = [ Styles.radioCheckOuter ];
 			let innerCircleStyles = [ Styles.radioCheckInner ];
-			let radioLabelStyles = [ Styles.radioLabel ];
+			let radioLabelStyles = [ Styles.text ];
 
 			if ( option.value == input.value ) {
 				outerCircleStyles.push( Styles.radioCheckOuterSelected );

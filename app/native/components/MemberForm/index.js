@@ -46,7 +46,7 @@ class MemberForm extends Component {
 				<View style={Styles.deleteActionBtnWrapper}>
 					<TouchableOpacity activeOpacity={0.9} onPress={this.props.onDelete}
 						style={[ Styles.allCenter, Styles.actionBtn, Styles.deleteActionBtn ]}>
-						<Text style={[ Styles.actionBtnText, Styles.deleteActionBtnText ]}>Delete</Text>
+						<Text style={[ Styles.text, Styles.deleteActionBtnText ]}>Delete</Text>
 					</TouchableOpacity>
 				</View>
 			);
@@ -55,7 +55,7 @@ class MemberForm extends Component {
 		return (
 			<View style={Styles.flexOne}>
 				<View style={Styles.formSection}>
-					<Text style={Styles.sectionTitle}>Info</Text>
+					<Text style={[ Styles.text, Styles.sectionTitle ]}>Info</Text>
 
 					<Field name="firstName" component={CTextInput}
 						placeholder={'First name'} placeholderTextColor={'#777'} />
@@ -70,7 +70,7 @@ class MemberForm extends Component {
 				</View>
 
 				<View style={Styles.formSection}>
-					<Text style={Styles.sectionTitle}>Role</Text>
+					<Text style={[ Styles.text, Styles.sectionTitle ]}>Role</Text>
 
 					<Field name="isAdmin" component={CRadioGroup}
 						options={radioLabels}
@@ -84,7 +84,7 @@ class MemberForm extends Component {
 					<View style={Styles.saveActionBtnWrapper}>
 						<TouchableOpacity activeOpacity={0.9} onPress={handleSubmit( this.props.onSave )}
 							style={[ Styles.allCenter, Styles.actionBtn, Styles.saveActionBtn ]}>
-							<Text style={[ Styles.actionBtnText, Styles.saveActionBtnText ]}>Save</Text>
+							<Text style={[ Styles.text, Styles.saveActionBtnText ]}>Save</Text>
 						</TouchableOpacity>
 					</View>
 				</View>

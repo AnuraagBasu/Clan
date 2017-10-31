@@ -32,7 +32,7 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 		justifyContent: 'center'
 	},
 	saveActionBtn: {
-		backgroundColor: 'green'
+		backgroundColor: '#2196f3'
 	},
 	deleteActionBtn: {
 		backgroundColor: 'transparent'

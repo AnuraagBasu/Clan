@@ -6,6 +6,14 @@ export default CommonStyles = {
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
+	image: {
+		flex: 1,
+		resizeMode: 'cover'
+	},
+	text: {
+		fontSize: 14,
+		color: '#ccc'
+	},
 	actionBtn: {
 		width: 80,
 		height: 40,
@@ -19,7 +27,13 @@ export default CommonStyles = {
 		shadowColor: '#ccc',
 		shadowOpacity: 0.9,
 	},
-	actionBtnText: {
-		fontSize: 14
+	headerTitle: {
+		fontSize: 18,
+		fontWeight: 'bold',
+		color: 'rgba(0, 0, 0, 0.6)'
+	},
+	container: {
+		paddingHorizontal: 20,
+		paddingVertical: 15
 	}
 };
