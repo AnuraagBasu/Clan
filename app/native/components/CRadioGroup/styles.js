@@ -18,7 +18,8 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 		justifyContent: 'center'
 	},
 	radioLabelSelected: {
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		color: 'rgba(0, 0, 0, 0.4)'
 	},
 	radioCheckWrapper: {
 		flex: 1,

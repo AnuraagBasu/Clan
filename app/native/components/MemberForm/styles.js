@@ -11,7 +11,8 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 	},
 	sectionTitle: {
 		fontSize: 16,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		color: 'rgba(0, 0, 0, 0.6)'
 	},
 	radioBtnWrapper: {
 		height: 80,
@@ -41,6 +42,6 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 		color: 'rgba(255, 255, 255, 0.8)'
 	},
 	deleteActionBtnText: {
-		color: 'red'
+		color: '#ef5350'
 	}
 } ) );

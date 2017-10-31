@@ -14,7 +14,8 @@ function getStore( initialState ) {
 }
 
 const initialState = {
-
+	currentView: 'landing',
+	members: []
 };
 
 export default getStore( initialState );

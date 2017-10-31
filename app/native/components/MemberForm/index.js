@@ -53,7 +53,7 @@ class MemberForm extends Component {
 		}
 
 		return (
-			<View style={Styles.flexOne}>
+			<View>
 				<View style={Styles.formSection}>
 					<Text style={[ Styles.text, Styles.sectionTitle ]}>Info</Text>
 

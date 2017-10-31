@@ -34,6 +34,9 @@ export default CommonStyles = {
 	},
 	container: {
 		paddingHorizontal: 20,
-		paddingVertical: 15
+		paddingBottom: 15
+	},
+	headerSection: {
+		paddingBottom: 20
 	}
 };

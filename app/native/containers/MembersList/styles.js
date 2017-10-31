@@ -6,9 +6,6 @@ import {
 import CommonStyles from '../../resources/CommonStyles';
 
 export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
-	headerSection: {
-		paddingBottom: 20
-	},
 	memberContainer: {
 		paddingVertical: 15,
 		borderTopColor: '#ccc',
