@@ -29,15 +29,7 @@ class MembersList extends Component {
 	}
 
 	_getMembers() {
-		let members = [ { id: 0, firstName: 'Anuraag', lastName: 'Basu', phone: '41532012', email: 'ab@gmail.com', isAdmin: true },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: true },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false },
-		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false }];
-
-		return members.map( ( member, index ) => {
+		return this.props.members.map( ( member, index ) => {
 			let memberName = member.firstName;
 			if ( member.lastName ) {
 				memberName += " " + member.lastName;
@@ -74,7 +66,7 @@ class MembersList extends Component {
 						</TouchableOpacity>
 					</View>
 					<Text style={[ Styles.text, Styles.headerTitle ]}>Team Members</Text>
-					<Text style={[ Styles.text ]}>You have 3 team members</Text>
+					<Text style={[ Styles.text ]}>You have {this.props.members.length} team members</Text>
 				</View>
 
 				<ScrollView showsVerticalScrollIndicator={false}>
@@ -91,7 +83,7 @@ function mapDispatchToProps( dispatch ) {
 
 function mapStateToProps( state ) {
 	return {
-
+		members: state.members
 	}
 }
 

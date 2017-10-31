@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+const _ = require( 'lodash' );
+
 import { ActionCreators } from '../../../core/actions';
 
 import MemberForm from '../../components/MemberForm';
@@ -22,16 +24,31 @@ class MemberInfo extends Component {
 		this.props.toggleOverlay();
 	}
 
-	onAddMember( values ) {
-		this.props.addMember( values );
+	onSave( values ) {
+		if ( this.props.action == "editMember" ) {
+			this.props.editMember( values );
+		} else {
+			this.props.addMember( values );
+		}
+
+		this.props.toggleOverlay();
+	}
+
+	onDelete() {
+		this.props.deleteMember();
+		this.props.toggleOverlay();
 	}
 
 	render() {
 		let headerTitle = "Add team member";
 		let headerSubText = "Set name, email, phone and role";
+		let enableDelete = false;
+		let initialValuesForForm = { isAdmin: false };
 		if ( this.props.action == "editMember" ) {
 			headerTitle = "Edit team member";
 			headerSubText = "Edit name, email, phone and role";
+			enableDelete = true;
+			initialValuesForForm = _.find( this.props.members, { id: this.props.memberToEdit } );
 		}
 
 		return (
@@ -48,8 +65,10 @@ class MemberInfo extends Component {
 
 				<View style={[ Styles.flexOne, Styles.formContainer ]}>
 					<MemberForm {...this.props}
-						enableDelete={true} initialValues={{ isAdmin: false }}
-						onSave={this.onAddMember.bind( this )} />
+						initialValues={initialValuesForForm}
+						enableDelete={enableDelete}
+						onDelete={this.onDelete.bind( this )}
+						onSave={this.onSave.bind( this )} />
 				</View>
 			</View>
 		);
@@ -62,7 +81,8 @@ function mapDispatchToProps( dispatch ) {
 
 function mapStateToProps( state ) {
 	return {
-
+		members: state.members,
+		memberToEdit: state.memberToEdit
 	};
 }
 
