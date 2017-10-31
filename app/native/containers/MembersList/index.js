@@ -19,6 +19,15 @@ class MembersList extends Component {
 		super( props );
 	}
 
+	onAddMemberClick() {
+		this.props.toggleOverlay( 'addMember' );
+	}
+
+	onMemberClick( memberId ) {
+		this.props.editMember( memberId );
+		this.props.toggleOverlay( 'editMember' );
+	}
+
 	_getMembers() {
 		let members = [ { id: 0, firstName: 'Anuraag', lastName: 'Basu', phone: '41532012', email: 'ab@gmail.com', isAdmin: true },
 		{ id: 1, firstName: 'Anuraag', lastName: '', phone: '41532012', email: 'ab@gmail.com', isAdmin: false },
@@ -39,7 +48,8 @@ class MembersList extends Component {
 			}
 
 			return (
-				<TouchableOpacity key={'member_' + index} style={Styles.memberContainer}>
+				<TouchableOpacity key={'member_' + index} activeOpacity={0.9} onPress={this.onMemberClick.bind( this, member.id )}
+					style={Styles.memberContainer}>
 					<View style={Styles.memberPhotoWrapper}>
 						<Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_G3a2C27gIrVA3JtDoMfmdTycsiKj7kMHrdhovYRfkxT6a9fkAw' }} style={Styles.image} />
 					</View>
@@ -59,7 +69,7 @@ class MembersList extends Component {
 			<View style={[ Styles.flexOne, Styles.container ]}>
 				<View style={Styles.headerSection}>
 					<View style={Styles.iconWrapper}>
-						<TouchableOpacity activeOpacity={0.9}>
+						<TouchableOpacity activeOpacity={0.9} onPress={this.onAddMemberClick.bind( this )}>
 							<Icon name={'ios-add-outline'} size={40} color={'#2196f3'} />
 						</TouchableOpacity>
 					</View>
@@ -71,7 +81,7 @@ class MembersList extends Component {
 					{this._getMembers()}
 				</ScrollView>
 			</View>
-		)
+		);
 	}
 }
 

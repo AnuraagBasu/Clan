@@ -14,7 +14,7 @@ function getStore( initialState ) {
 }
 
 const initialState = {
-	currentView: 'landing',
+	overlayAction: "",
 	members: []
 };
 

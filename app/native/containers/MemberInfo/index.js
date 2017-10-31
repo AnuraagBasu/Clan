@@ -19,7 +19,7 @@ class MemberInfo extends Component {
 	}
 
 	onClose() {
-		this.props.changeView( 'landing' );
+		this.props.toggleOverlay();
 	}
 
 	onAddMember( values ) {
@@ -27,6 +27,13 @@ class MemberInfo extends Component {
 	}
 
 	render() {
+		let headerTitle = "Add team member";
+		let headerSubText = "Set name, email, phone and role";
+		if ( this.props.action == "editMember" ) {
+			headerTitle = "Edit team member";
+			headerSubText = "Edit name, email, phone and role";
+		}
+
 		return (
 			<View style={[ Styles.flexOne, Styles.container ]}>
 				<View style={Styles.headerSection}>
@@ -35,8 +42,8 @@ class MemberInfo extends Component {
 							<Icon name={'ios-close-outline'} size={40} color={'#2196f3'} />
 						</TouchableOpacity>
 					</View>
-					<Text style={[ Styles.text, Styles.headerTitle ]}>Add a team member</Text>
-					<Text style={[ Styles.text ]}>Set name, email, phone and role</Text>
+					<Text style={[ Styles.text, Styles.headerTitle ]}>{headerTitle}</Text>
+					<Text style={[ Styles.text ]}>{headerSubText}</Text>
 				</View>
 
 				<View style={[ Styles.flexOne, Styles.formContainer ]}>
