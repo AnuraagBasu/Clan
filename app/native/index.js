@@ -5,11 +5,11 @@ import store from '../core/store';
 import Root from './containers/Root';
 
 export default class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Root />
-            </Provider>
-        );
-    }
+	render() {
+		return (
+			<Provider store={store}>
+				<Root />
+			</Provider>
+		);
+	}
 }
