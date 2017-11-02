@@ -12,7 +12,8 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 		paddingHorizontal: 10,
 		paddingVertical: 5,
 		marginTop: 10,
-		fontSize: 14
+		fontSize: 14,
+		color: 'rgba(0, 0, 0, 1)'
 	},
 	inputBoxActive: {
 		borderColor: '#ccc'

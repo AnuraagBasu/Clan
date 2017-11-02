@@ -11,8 +11,9 @@ export default CommonStyles = {
 		resizeMode: 'cover'
 	},
 	text: {
+		fontFamily: 'Georgia',
 		fontSize: 14,
-		color: '#ccc'
+		color: '#777'
 	},
 	actionBtn: {
 		width: 80,

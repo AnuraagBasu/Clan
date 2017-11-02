@@ -38,8 +38,6 @@ class MemberForm extends Component {
 			value: true
 		}];
 
-		console.log( "props of form are: " + JSON.stringify( this.props ) );
-
 		let deleteActionBtnWrapper;
 		if ( this.props.enableDelete ) {
 			deleteActionBtnWrapper = (
@@ -99,7 +97,7 @@ export default reduxForm( {
 		const errors = {};
 		errors.firstName = !values.firstName ? 'First name is required' : undefined;
 		errors.email = !values.email ? 'Email is required' : undefined;
-		errors.phone = !values.email ? 'Phone is required' : undefined;
+		errors.phone = !values.phone ? 'Phone is required' : undefined;
 
 		return errors;
 	}

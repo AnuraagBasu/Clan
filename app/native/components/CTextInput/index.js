@@ -11,8 +11,7 @@ export default class CTextInput extends Component {
 	render() {
 		const { input, ...inputProps } = this.props;
 
-		console.log( "props of text are: " + JSON.stringify( this.props ) );
-		let textInputStyles = [ Styles.inputBox ];
+		let textInputStyles = [ Styles.text, Styles.inputBox ];
 
 		if ( this.props.meta.active ) {
 			textInputStyles.push( Styles.inputBoxActive );
@@ -25,6 +24,7 @@ export default class CTextInput extends Component {
 		return (
 			<TextInput
 				value={input.value}
+				underlineColorAndroid={'transparent'}
 				{...inputProps}
 				onChangeText={input.onChange}
 				onFocus={input.onFocus}

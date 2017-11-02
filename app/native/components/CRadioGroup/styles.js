@@ -19,7 +19,7 @@ export default Styles = StyleSheet.create( Object.assign( {}, CommonStyles, {
 	},
 	radioLabelSelected: {
 		fontWeight: 'bold',
-		color: 'rgba(0, 0, 0, 0.4)'
+		color: 'rgba(0, 0, 0, 0.5)'
 	},
 	radioCheckWrapper: {
 		flex: 1,

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import * as Animatable from 'react-native-animatable';
 import { ActionCreators } from '../../../core/actions';
 
 import MembersList from '../MembersList';
@@ -26,10 +26,24 @@ class Root extends Component {
 
 		let overlayView;
 		if ( this.props.overlayAction ) {
+			let animation = "fadeIn";
+			if ( this.props.overlayAction == "editMember" ) {
+				animation = {
+					0: {
+						opacity: 0,
+						scale: 0
+					},
+					1: {
+						opacity: 1,
+						scale: 1
+					}
+				};
+			}
+
 			overlayView = (
-				<View style={{ position: 'absolute', top: 0, right: 0, backgroundColor: '#fff', width: width, height: height }}>
+				<Animatable.View animation={animation} duration={200} style={{ position: 'absolute', backgroundColor: '#fff', width: width, height: height }}>
 					<MemberInfo action={this.props.overlayAction} />
-				</View>
+				</Animatable.View>
 			);
 		}
 
