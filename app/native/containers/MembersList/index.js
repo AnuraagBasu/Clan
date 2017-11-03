@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+const _ = require( 'lodash' );
+
 import { ActionCreators } from '../../../core/actions';
 
 import Styles from './styles';
@@ -24,7 +26,8 @@ class MembersList extends Component {
 	}
 
 	onMemberClick( memberId ) {
-		this.props.editMember( memberId );
+		let memberToEdit = _.find( this.props.members, { id: memberId } );
+		this.props.editMember( memberToEdit );
 		this.props.toggleOverlay( 'editMember' );
 	}
 

@@ -41,14 +41,14 @@ class Root extends Component {
 			}
 
 			overlayView = (
-				<Animatable.View animation={animation} duration={200} style={{ position: 'absolute', backgroundColor: '#fff', width: width, height: height }}>
+				<Animatable.View animation={animation} duration={200} style={[ Styles.overlayContainer, { width: width, height: height }]}>
 					<MemberInfo action={this.props.overlayAction} />
 				</Animatable.View>
 			);
 		}
 
 		return (
-			<View style={Styles.flexOne}>
+			<View style={Styles.root}>
 				<MembersList />
 
 				{overlayView}

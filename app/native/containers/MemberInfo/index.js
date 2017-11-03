@@ -26,7 +26,7 @@ class MemberInfo extends Component {
 
 	onSave( values ) {
 		if ( this.props.action == "editMember" ) {
-			this.props.editMember( values );
+			this.props.updateMember( values );
 		} else {
 			this.props.addMember( values );
 		}
@@ -48,7 +48,7 @@ class MemberInfo extends Component {
 			headerTitle = "Edit team member";
 			headerSubText = "Edit name, email, phone and role";
 			enableDelete = true;
-			initialValuesForForm = _.find( this.props.members, { id: this.props.memberToEdit } );
+			initialValuesForForm = this.props.memberToEdit;
 		}
 
 		return (

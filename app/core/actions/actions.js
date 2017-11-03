@@ -21,11 +21,20 @@ export function addMember( member ) {
 	};
 }
 
-export function editMember( memberId ) {
+export function editMember( member ) {
 	return {
 		type: types.EDIT_MEMBER,
 		payload: {
-			memberId
+			member
+		}
+	};
+}
+
+export function updateMember( updatedMember ) {
+	return {
+		type: types.UPDATE_MEMBER,
+		payload: {
+			updatedMember
 		}
 	};
 }
