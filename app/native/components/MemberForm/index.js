@@ -56,13 +56,17 @@ class MemberForm extends Component {
 					<Text style={[ Styles.text, Styles.sectionTitle ]}>Info</Text>
 
 					<Field name="firstName" component={CTextInput}
-						placeholder={'First name'} placeholderTextColor={'#777'} />
+						placeholder={'First name'} placeholderTextColor={'#777'}
+						returnKeyType={'next'} />
 					<Field name="lastName" component={CTextInput}
-						placeholder={'Last name'} placeholderTextColor={'#777'} />
+						placeholder={'Last name'} placeholderTextColor={'#777'}
+						returnKeyType={'next'} />
 					<Field name="email" component={CTextInput}
-						placeholder={'Email'} placeholderTextColor={'#777'} />
+						placeholder={'Email'} placeholderTextColor={'#777'}
+						returnKeyType={'next'} />
 					<Field name="phone" component={CTextInput}
 						placeholder={'Phone'} placeholderTextColor={'#777'}
+						returnKeyType={'next'} keyboardType={'numeric'}
 						format={this._phoneNumberFormatter.bind( this )}
 						parse={this._phoneNumberParser.bind( this )} />
 				</View>
