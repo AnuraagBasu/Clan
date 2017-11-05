@@ -21,6 +21,10 @@ class MemberInfo extends Component {
 	}
 
 	onClose() {
+		if ( this.props.action == "editMember" ) {
+			this.props.cancelEditMember();
+		}
+
 		this.props.toggleOverlay();
 	}
 

@@ -15,7 +15,8 @@ function getStore( initialState ) {
 
 const initialState = {
 	overlayAction: "",
-	members: []
+	members: [],
+	memberToEdit: {}
 };
 
 export default getStore( initialState );

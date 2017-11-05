@@ -11,7 +11,7 @@ export function toggleOverlay( overlayAction = "" ) {
 
 export function addMember( member ) {
 	//TODO: should be changed
-	member.id = new Date().getTime();
+	member.id = new Date().getTime() / 1000;
 
 	return {
 		type: types.ADD_MEMBER,
@@ -45,5 +45,11 @@ export function deleteMember( memberIdToDelete ) {
 		payload: {
 			id: memberIdToDelete
 		}
+	};
+}
+
+export function cancelEditMember() {
+	return {
+		type: types.CANCEL_EDIT_MEMBER
 	};
 }

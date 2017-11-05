@@ -3,3 +3,4 @@ export const ADD_MEMBER = "ADD_MEMBER";
 export const EDIT_MEMBER = "EDIT_MEMBER";
 export const UPDATE_MEMBER = "UPDATE_MEMBER";
 export const DELETE_MEMBER = "DELETE_MEMBER";
+export const CANCEL_EDIT_MEMBER = "CANCEL_EDIT_MEMBER";

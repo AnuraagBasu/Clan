@@ -36,5 +36,8 @@ export const members = createReducer( {}, {
 export const memberToEdit = createReducer( {}, {
 	[ types.EDIT_MEMBER ]( state, action ) {
 		return action.payload.member;
+	},
+	[ types.CANCEL_EDIT_MEMBER ]( state, action ) {
+		return {};
 	}
 } );
