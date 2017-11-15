@@ -19,7 +19,7 @@ export const members = createReducer( {}, {
 	},
 	[ types.DELETE_MEMBER ]( state, action ) {
 		let members = [ ...state ];
-		members = _.filter( members, { id: action.payload.id } );
+		_.remove( members, { id: action.payload.id } );
 		return members;
 	},
 	[ types.UPDATE_MEMBER ]( state, action ) {

@@ -38,8 +38,8 @@ class MemberInfo extends Component {
 		this.props.toggleOverlay();
 	}
 
-	onDelete() {
-		this.props.deleteMember();
+	onDelete( memberId ) {
+		this.props.deleteMember( memberId );
 		this.props.toggleOverlay();
 	}
 
@@ -71,7 +71,7 @@ class MemberInfo extends Component {
 					<MemberForm {...this.props}
 						initialValues={initialValuesForForm}
 						enableDelete={enableDelete}
-						onDelete={this.onDelete.bind( this )}
+						onDelete={this.onDelete.bind( this, this.props.memberToEdit.id )}
 						onSave={this.onSave.bind( this )} />
 				</View>
 			</View>
