@@ -60,6 +60,13 @@ class MembersList extends Component {
 	}
 
 	render() {
+		let subText = "You have " + this.props.members.length;
+		if ( this.props.members.length == 1 ) {
+			subText += " team member";
+		} else {
+			subText += " team members";
+		}
+
 		return (
 			<View style={[ Styles.flexOne, Styles.container ]}>
 				<View style={Styles.headerSection}>
@@ -69,7 +76,7 @@ class MembersList extends Component {
 						</TouchableOpacity>
 					</View>
 					<Text style={[ Styles.text, Styles.headerTitle ]}>Team Members</Text>
-					<Text style={[ Styles.text ]}>You have {this.props.members.length} team members</Text>
+					<Text style={[ Styles.text ]}>{subText}</Text>
 				</View>
 
 				<ScrollView showsVerticalScrollIndicator={false}>
